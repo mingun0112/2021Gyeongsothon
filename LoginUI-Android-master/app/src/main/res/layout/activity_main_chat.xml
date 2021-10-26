@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"!-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity_chat">
+    android:orientation="vertical"
+    tools:context=".MainActivity_chat" >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -17,24 +17,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
         <EditText
             android:id="@+id/chatText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:inputType=""
+            android:contentDescription="Enter your message"
+            />
 
         <Button
             android:id="@+id/sendButton"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:background="@android:drawable/ic_menu_send"
-            app:backgroundTint="@android:color/holo_purple"
-            />
+            app:backgroundTint="@android:color/holo_purple" />
     </LinearLayout>
-
-
 </LinearLayout>
-
-    <!--/androidx.constraintlayout.widget.ConstraintLayout !-->
