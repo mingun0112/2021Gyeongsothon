@@ -6,4 +6,8 @@
     <string name="id_email">ID(Email)</string>
     <string name="man">Man</string>
     <string name="woman">Woman</string>
+    <string name="call">신고하기</string>
+    <string name="gaurdience">Gaurdience</string>
+    <string name="gaurd">목격자 탐색</string>
+    <string name="chat">채팅방</string>
 </resources>
