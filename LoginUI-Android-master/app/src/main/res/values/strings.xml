@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Login UI</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="id_email">ID(Email)</string>
+    <string name="man">Man</string>
+    <string name="woman">Woman</string>
 </resources>
