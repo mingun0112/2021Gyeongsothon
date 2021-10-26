@@ -11,10 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
+        <activity
+            android:name=".MainActivity_chat"
+            android:exported="true" />
 
         <meta-data
-            android:name='com.google.android.geo.API_KEY'
-            android:value="AIzaSyADX7DR_7GoehFWAY0stsQkKRa9vwyi2Ug"/>
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyADX7DR_7GoehFWAY0stsQkKRa9vwyi2Ug" />
 
         <activity
             android:name=".RegisterActivity"
