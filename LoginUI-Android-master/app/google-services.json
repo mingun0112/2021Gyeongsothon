@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "43275415302",
+    "project_id": "guardience",
+    "storage_bucket": "guardience.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:43275415302:android:a479723d0e6dc06171f887",
+        "android_client_info": {
+          "package_name": "com.shashank.platform.loginui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "43275415302-95ujpuf41n29lvr10mbj18qpjbghqr5l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2Fzi8nJgRgz7m9oaVTX1r_sareD-LSEA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "43275415302-95ujpuf41n29lvr10mbj18qpjbghqr5l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
