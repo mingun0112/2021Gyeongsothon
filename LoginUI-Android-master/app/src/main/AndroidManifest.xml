@@ -12,7 +12,15 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
         <activity
+<<<<<<< Updated upstream
             android:name=".MainActivity_chat"
+=======
+<<<<<<< HEAD
+            android:name=".MainActivity2"
+=======
+            android:name=".MainActivity_chat"
+>>>>>>> 8fa1c55bdf8377a35dd8c5b26ef401cfffca4b66
+>>>>>>> Stashed changes
             android:exported="true" />
 
         <meta-data
