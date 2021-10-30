@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,16 +8,57 @@
     tools:context=".RegisterActivity">
 
     <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#5f2d9a">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/gotham"
+            android:text="Gaurdience"
+            android:textColor="#ffdc17"
+            android:textSize="40sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="2dp"
+            android:background="#ffdc17" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/gotham"
+            android:layout_gravity="center"
+            android:text="Register"
+            android:textColor="#ffdc17"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="32dp"
         android:orientation="vertical"
         android:paddingLeft="32dp"
         android:paddingRight="32dp">
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -26,6 +67,7 @@
             android:theme="@style/EditScreenTextInputLayoutStyle">
 
             <EditText
+                android:id="@+id/res_name"
                 android:importantForAutofill="no"
                 tools:targetApi="o"
                 android:layout_width="match_parent"
@@ -48,6 +90,7 @@
             android:theme="@style/EditScreenTextInputLayoutStyle">
 
             <EditText
+                android:id="@+id/res_id"
                 android:importantForAutofill="no"
                 tools:targetApi="o"
                 android:layout_width="match_parent"
@@ -73,6 +116,7 @@
             android:theme="@style/EditScreenTextInputLayoutStyle">
 
             <EditText
+                android:id="@+id/res_pw"
                 android:importantForAutofill="no"
                 tools:targetApi="o"
                 android:layout_width="match_parent"
@@ -163,5 +207,15 @@
 
 
         </RadioGroup>
+            <Button
+                android:layout_marginTop="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="가입하기"
+                android:textSize="25sp"
+                ></Button>
+
+
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>
+</LinearLayout>
