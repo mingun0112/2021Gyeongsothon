@@ -48,7 +48,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/gotham"
-            android:text="Gaurdience"
+            android:text="GaurDience"
             android:textColor="#ffdc17"
             android:textSize="40sp" />
 
