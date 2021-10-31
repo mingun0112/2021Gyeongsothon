@@ -7,18 +7,40 @@
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
     android:background="#5f2d9a"
+
     tools:context=".MainActivity2">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/login_img2" />
+
+    </FrameLayout>
 
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#5f2d9a">
+    android:background="#5f2d9a"
+    >
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingLeft="50dp">
 
         <TextView
             android:id="@+id/textView"
@@ -35,6 +57,20 @@
             android:layout_height="2dp"
             android:layout_marginTop="2dp"
             android:background="#ffdc17" />
+
+
+    </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btn_siren"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/siren"
+                android:scaleType="centerInside"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp">
+            </ImageButton>
 
 
     </LinearLayout>
@@ -68,6 +104,7 @@
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/btn_chat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"

@@ -20,6 +20,8 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -42,6 +44,7 @@ import com.google.android.material.snackbar.Snackbar;
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
+import android.net.Uri;
 
 
 public class MainActivity2 extends AppCompatActivity
@@ -78,10 +81,13 @@ public class MainActivity2 extends AppCompatActivity
 
     private View mLayout;  // Snackbar 사용하기 위해서는 View가 필요합니다.
     // (참고로 Toast에서는 Context가 필요했습니다.)
+    private ImageButton btn_siren;
+    private Button btn_chat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
                 WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -89,6 +95,26 @@ public class MainActivity2 extends AppCompatActivity
         setContentView(R.layout.activity_main2);
 
         mLayout = findViewById(R.id.layout_main);
+        btn_siren = findViewById(R.id.btn_siren);
+
+        btn_siren.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:112"));
+                startActivity(intent);
+            }
+        });
+        btn_chat = findViewById(R.id.btn_sign_up);
+        btn_chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity2.this, MainActivity_chat.class);
+                startActivity(intent);
+            }
+        });
+
 
         locationRequest = new LocationRequest()
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
