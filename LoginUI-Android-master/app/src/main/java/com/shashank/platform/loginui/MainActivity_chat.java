@@ -19,11 +19,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-/*import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;*/
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +35,7 @@ public class MainActivity_chat extends AppCompatActivity {
     private List<Chat> chatList;
     private String nickname = "익명1";
 
+    private DatabaseReference myRef;
     private EditText chatText;
     private Button sendButton;
     @Override
@@ -57,7 +58,7 @@ public class MainActivity_chat extends AppCompatActivity {
                     chat.setMsg(msg);
 
                     //메시지를 파이어베이스에 보냄.
-                    //myRef.push().setValue(chat);
+                    myRef.push().setValue(chat);
 
                     chatText.setText("");
                 }
@@ -72,6 +73,38 @@ public class MainActivity_chat extends AppCompatActivity {
         chatList = new ArrayList<>();
         adapter = new ChatAdapter(chatList, nickname);
         recyclerView.setAdapter(adapter);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("message");
+        myRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Chat chat = snapshot.getValue(Chat.class);
+                ((ChatAdapter)adapter).addChat(chat);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
 
 
 }
