@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="deploymentTargetDropDown">
-    <targetSelectedWithDropDown>
+    <runningDeviceTargetSelectedWithDropDown>
       <Target>
-        <type value="QUICK_BOOT_TARGET" />
+        <type value="RUNNING_DEVICE_TARGET" />
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
             <value value="C:\Users\mingu\.android\avd\Pixel_3_XL_API_27.avd" />
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+          </Key>
+        </deviceKey>
+      </Target>
+    </runningDeviceTargetSelectedWithDropDown>
+    <timeTargetWasSelectedWithDropDown value="2021-10-31T08:30:07.333193Z" />
+=======
+=======
+>>>>>>> c32d84cee5f7a0a3c2bd3394698583b39297a0e2
+>>>>>>> Stashed changes
             <value value="C:\Users\user\.android\avd\Pixel_3_XL_API_27.avd" />
             <value value="C:\Users\mingu\.android\avd\Pixel_3_XL_API_27.avd" />
           </Key>
@@ -22,5 +35,12 @@
 
     <timeTargetWasSelectedWithDropDown value="2021-10-27T08:52:17.008921500Z" />
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> c32d84cee5f7a0a3c2bd3394698583b39297a0e2
+=======
+>>>>>>> c32d84cee5f7a0a3c2bd3394698583b39297a0e2
+>>>>>>> Stashed changes
   </component>
 </project>

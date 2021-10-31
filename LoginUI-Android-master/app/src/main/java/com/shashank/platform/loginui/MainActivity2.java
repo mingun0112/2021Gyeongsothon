@@ -106,7 +106,7 @@ public class MainActivity2 extends AppCompatActivity
                 startActivity(intent);
             }
         });
-        btn_chat = findViewById(R.id.btn_sign_up);
+        btn_chat = findViewById(R.id.btn_chat);
         btn_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
