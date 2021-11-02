@@ -88,6 +88,7 @@
             android:theme="@style/EditScreenTextInputLayoutStyle">
 
             <EditText
+                android:id="@+id/edittext_email"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:drawablePadding="16dp"
@@ -107,7 +108,7 @@
             android:theme="@style/EditScreenTextInputLayoutStyle">
 
             <EditText
-
+                android:id="@+id/edittext_password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:drawablePadding="16dp"
