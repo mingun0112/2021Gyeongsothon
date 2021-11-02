@@ -1,7 +1,12 @@
 package com.shashank.platform.loginui;
 
+<<<<<<< Updated upstream
 import android.support.annotation.NonNull;
 import android.support.v4.app.AppCompatActivity;
+=======
+
+import android.support.v4.app.*;
+>>>>>>> Stashed changes
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +14,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+<<<<<<< Updated upstream
+=======
+import androidx.annotation.NonNull;
+>>>>>>> Stashed changes
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
