@@ -33,7 +33,7 @@ public class MainActivity_chat extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private List<Chat> chatList;
-    private String nickname = "익명1";
+    private String nickname = "연홍";
 
     private DatabaseReference myRef;
     private EditText chatText;
