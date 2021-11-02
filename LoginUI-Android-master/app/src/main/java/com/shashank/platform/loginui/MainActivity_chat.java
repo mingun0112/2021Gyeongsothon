@@ -75,6 +75,7 @@ public class MainActivity_chat extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
+
         myRef = database.getReference("message");
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
