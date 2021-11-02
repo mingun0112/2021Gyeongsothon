@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         editTextEmail = (EditText) findViewById(R.id.edittext_email);
         editTextPassword = (EditText) findViewById(R.id.edittext_password);
-
+        btn_sign_up = findViewById(R.id.btn_sign_up);
         /*btn_sign_in = findViewById(R.id.btn_sign_in);
         btn_sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +58,30 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });*/
+        btn_sign_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+        imageView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
+            public void onSwipeTop() {
+            }
+
+            public void onSwipeRight() {
+
+            }
+
+            public void onSwipeLeft() {
+
+            }
+
+            public void onSwipeBottom() {
+            }
+
+        });
+
 
         btn_sign_in = (Button) findViewById(R.id.btn_sign_in);
         btn_sign_in.setOnClickListener(new View.OnClickListener() {
@@ -113,31 +137,8 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-btn_sign_up = findViewById(R.id.btn_sign_up);
-        btn_sign_up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
-        });
 
 
-        imageView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
-            public void onSwipeTop() {
-            }
 
-            public void onSwipeRight() {
 
-            }
 
-            public void onSwipeLeft() {
-
-            }
-
-            public void onSwipeBottom() {
-            }
-
-        });
-    }
-}
