@@ -83,6 +83,10 @@ public class MainActivity2 extends AppCompatActivity
     // (참고로 Toast에서는 Context가 필요했습니다.)
     private ImageButton btn_siren;
     private Button btn_chat;
+    private Button btn_list;
+    Button btn_witness;
+    AlertDialog.Builder builder;
+    String[] witness;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +97,13 @@ public class MainActivity2 extends AppCompatActivity
                 WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         setContentView(R.layout.activity_main2);
+        btn_witness=findViewById(R.id.btn_witness);
+        btn_witness.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialog();
+            }
+        });
 
         mLayout = findViewById(R.id.layout_main);
         btn_siren = findViewById(R.id.btn_siren);
@@ -106,6 +117,7 @@ public class MainActivity2 extends AppCompatActivity
                 startActivity(intent);
             }
         });
+
         btn_chat = findViewById(R.id.btn_chat);
         btn_chat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -547,6 +559,20 @@ public class MainActivity2 extends AppCompatActivity
 
                 break;
         }
+    }
+    public void showDialog(){
+        witness=getResources().getStringArray(R.array.witness);
+        builder=new AlertDialog.Builder(MainActivity2.this);
+        builder.setTitle("목격자 리스트");
+        builder.setItems(witness, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                Toast.makeText(getApplicationContext(),"목격자는 "+witness[which],Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        AlertDialog alertDialog=builder.create();
+        alertDialog.show();
     }
 
 

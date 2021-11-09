@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Login UI</string>
+    <string name="app_name">가디온즈</string>
     <string name="name">Name</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
@@ -10,4 +10,12 @@
     <string name="gaurdience">Gaurdience</string>
     <string name="gaurd">목격자 탐색</string>
     <string name="chat">채팅방</string>
+    <string name="textview">TextView</string>
+    <string-array name="witness">
+        <item>유빈</item>
+        <item>연홍</item>
+        <item>연지</item>
+
+    </string-array>
+
 </resources>
