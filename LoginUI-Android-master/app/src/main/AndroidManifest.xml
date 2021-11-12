@@ -15,7 +15,11 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
         <activity
+<<<<<<< Updated upstream
             android:name=".MainActivity_Witness"
+=======
+            android:name=".chatstart"
+>>>>>>> Stashed changes
             android:exported="true" />
         <activity
             android:name=".SubActivity"
