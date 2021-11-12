@@ -1,20 +1,16 @@
 package com.shashank.platform.loginui;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
@@ -25,6 +21,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -38,20 +40,19 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageMetadata;
-import com.google.firebase.storage.StorageReference;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import android.net.Uri;
-import java.util.*;
+import java.util.Map;
 
 
 public class MainActivity2 extends AppCompatActivity
@@ -65,6 +66,7 @@ public class MainActivity2 extends AppCompatActivity
     private String str_name;
     private GoogleMap mMap;
     private Marker currentMarker = null;
+    CircleOptions circleOptions = new CircleOptions();
 
     private static final String TAG = "googlemap_example";
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
@@ -83,7 +85,7 @@ public class MainActivity2 extends AppCompatActivity
 
     Location mCurrentLocatiion;
     LatLng currentPosition;
-
+    LatLng position;
 
     private FusedLocationProviderClient mFusedLocationClient;
     private LocationRequest locationRequest;
@@ -91,7 +93,6 @@ public class MainActivity2 extends AppCompatActivity
 
 
     private View mLayout;  // Snackbar 사용하기 위해서는 View가 필요합니다.
-    // (참고로 Toast에서는 Context가 필요했습니다.)
     private ImageButton btn_siren;
     private Button btn_chat;
     private Button btn_list;
@@ -115,13 +116,13 @@ public class MainActivity2 extends AppCompatActivity
                 WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         setContentView(R.layout.activity_main2);
-        /*btn_witness=findViewById(R.id.btn_witness);
+        btn_witness=findViewById(R.id.btn_witness);
         btn_witness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showDialog();
             }
-        });*/
+        });
         findViewById(R.id.btn_witness).setOnClickListener(new View.OnClickListener(){
             public void onClick(final View view){
                 final PopupMenu popupMenu = new PopupMenu(getApplicationContext(),view);
@@ -152,6 +153,7 @@ public class MainActivity2 extends AppCompatActivity
                 });
                 popupMenu.show();
             }
+
         });
 
         mLayout = findViewById(R.id.layout_main);
@@ -172,6 +174,8 @@ public class MainActivity2 extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity2.this, chatstart.class); //MainActivity_chat.class);
+
+                // Intent intent = new Intent(MainActivity2.this, MainActivity_chat.class);
                 startActivity(intent);
             }
         });
@@ -222,7 +226,6 @@ public class MainActivity2 extends AppCompatActivity
         //런타임 퍼미션 요청 대화상자나 GPS 활성 요청 대화상자 보이기전에
         //지도의 초기위치를 서울로 이동
         setDefaultLocation();
-
 
 
         //런타임 퍼미션 처리
@@ -284,8 +287,11 @@ public class MainActivity2 extends AppCompatActivity
             public void onMapClick(LatLng latLng) {
 
                 Log.d( TAG, "onMapClick :");
+                mMap.addCircle(circleOptions);
             }
         });
+
+
     }
 
     LocationCallback locationCallback = new LocationCallback() {
@@ -322,7 +328,6 @@ public class MainActivity2 extends AppCompatActivity
 
 
 
-    @SuppressLint("MissingPermission")
     private void startLocationUpdates() {
 
         if (!checkLocationServicesStatus()) {
@@ -625,6 +630,7 @@ public class MainActivity2 extends AppCompatActivity
                 break;
         }
     }
+
     public void showDialog(){
         witness=getResources().getStringArray(R.array.witness);
         builder=new AlertDialog.Builder(MainActivity2.this);
@@ -640,14 +646,26 @@ public class MainActivity2 extends AppCompatActivity
         alertDialog.show();
     }
 
-    @Override
-    public int getWallpaperDesiredMinimumWidth() {
-        return super.getWallpaperDesiredMinimumWidth();
+    // 마커, 원추가
+    public void onAddMarker() {
+        position = new LatLng(location.getLatitude(), location.getLongitude());
+
+        MarkerOptions myMarker = new MarkerOptions().position(position);
+
+        CircleOptions circle50M = new CircleOptions().center(position).radius(50).strokeWidth(0f).fillColor(Color.parseColor("#880000ff"));
+
+        this.mMap.addMarker(myMarker);
+
+        this.mMap.addCircle(circle50M);
     }
 
-
-
-
-
-
+    public void addCircle(View view){
+        position = new LatLng(location.getLatitude(), location.getLongitude());
+        circleOptions.strokeWidth(10);
+        circleOptions.strokeColor(0);
+        circleOptions.fillColor(Color.parseColor("#880000ff"));
+        circleOptions.center(position);
+        circleOptions.radius(1000);
+        mMap.addCircle(circleOptions);
+    }
 }
