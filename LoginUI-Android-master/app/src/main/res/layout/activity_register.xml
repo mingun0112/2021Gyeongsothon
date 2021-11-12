@@ -164,21 +164,6 @@
             android:textColorHint="#96ffffff"
             android:theme="@style/EditScreenTextInputLayoutStyle">
 
-            <EditText
-                android:importantForAutofill="no"
-                tools:targetApi="o"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:drawableEnd="@drawable/ic_email_white_24dp"
-                android:drawablePadding="16dp"
-                android:fontFamily="@font/calibri"
-                android:gravity="center"
-                android:hint="@string/id_email"
-                android:inputType="textEmailAddress"
-                android:maxLines="1"
-                android:textColor="@android:color/white"
-                android:textSize="20sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
