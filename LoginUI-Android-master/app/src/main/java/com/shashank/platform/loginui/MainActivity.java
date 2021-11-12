@@ -100,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                    intent.putExtra("name",editTextEmail.getText().toString());
                     startActivity(intent);
                     finish();
                 } else {

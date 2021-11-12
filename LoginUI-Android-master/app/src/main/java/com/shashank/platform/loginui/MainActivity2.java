@@ -42,19 +42,27 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageMetadata;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 import android.net.Uri;
+import java.util.*;
 
 
 public class MainActivity2 extends AppCompatActivity
         implements OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback{
 
+    long mNow;
+    Date mDate;
+    SimpleDateFormat mFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
-
+    private String str_name;
     private GoogleMap mMap;
     private Marker currentMarker = null;
 
@@ -94,6 +102,13 @@ public class MainActivity2 extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        Intent intent = getIntent();
+        str_name = intent.getStringExtra("name");
+        Map<String, Object> data = new HashMap<>();
+        Map<String, Object> data1 = new HashMap<>();
+
 
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
@@ -156,7 +171,7 @@ public class MainActivity2 extends AppCompatActivity
         btn_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity2.this, chatstart.class); // MainActivity_chat.class);
+                Intent intent = new Intent(MainActivity2.this, chatstart.class); //MainActivity_chat.class);
                 startActivity(intent);
             }
         });
@@ -180,6 +195,22 @@ public class MainActivity2 extends AppCompatActivity
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        //String pos = String.valueOf(location.getLatitude()) + String.valueOf(location.getLongitude());
+        //data.put(str_name, getTime());
+        //data1.put(str_name, pos);
+        //FirebaseStorage storage = FirebaseStorage.getInstance();
+        //StorageReference storageRef = storage.getReference();
+        //storageRef.putFile(data);
+
+        //storageRef.updateMetadata((StorageMetadata) data1);
+    }
+
+
+    private String getTime(){
+        mNow = System.currentTimeMillis();
+        mDate = new Date(mNow);
+        return mFormat.format(mDate);
     }
 
     @Override
@@ -275,7 +306,6 @@ public class MainActivity2 extends AppCompatActivity
                 String markerTitle = getCurrentAddress(currentPosition);
                 String markerSnippet = "위도:" + String.valueOf(location.getLatitude())
                         + " 경도:" + String.valueOf(location.getLongitude());
-
                 Log.d(TAG, "onLocationResult : " + markerSnippet);
 
 

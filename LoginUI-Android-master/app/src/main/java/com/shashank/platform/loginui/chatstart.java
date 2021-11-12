@@ -2,6 +2,7 @@ package com.shashank.platform.loginui;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class chatstart extends AppCompatActivity {
 
 
     private ListView chat_list;
+    private Button btn_create;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
     private DatabaseReference reference = databaseReference.getRoot();
@@ -48,6 +50,32 @@ public class chatstart extends AppCompatActivity {
         chat_list = (ListView) findViewById(R.id.chat_list);
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,arr_roomList);
         chat_list.setAdapter(arrayAdapter);
+        btn_create = (Button) findViewById(R.id.btn_create);
+
+        btn_create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final EditText et_inD = new EditText(chatstart.this);
+                final AlertDialog.Builder builder = new AlertDialog.Builder(chatstart.this);
+                builder.setTitle("목격자 입력");
+                builder.setView(et_inD);
+                builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        str_room = et_inD.getText().toString();
+                        map.put(str_room,"");
+                        reference.updateChildren(map);
+                    }
+                });
+                builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                builder.show();
+            }
+        });
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override

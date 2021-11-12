@@ -28,6 +28,12 @@
             android:id="@+id/chat_list"
             android:layout_marginBottom="50dp"/>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/btn_create"
+            android:layout_marginBottom="-50dp"/>
+
     </LinearLayout>
 
 </RelativeLayout>
