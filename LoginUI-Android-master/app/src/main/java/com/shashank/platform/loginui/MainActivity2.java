@@ -126,6 +126,12 @@ public class MainActivity2 extends AppCompatActivity
                         else if(menuItem.getItemId()==R.id.item4){
                             Toast.makeText(MainActivity2.this,"메뉴4 선택", Toast.LENGTH_SHORT).show();
                         }
+                        else if(menuItem.getItemId()==R.id.item5){
+                            Toast.makeText(MainActivity2.this,"메뉴5 선택", Toast.LENGTH_SHORT).show();
+                        }
+                        else if(menuItem.getItemId()==R.id.item6){
+                            Toast.makeText(MainActivity2.this,"메뉴6 선택", Toast.LENGTH_SHORT).show();
+                        }
                         return false;
                     }
                 });
