@@ -95,7 +95,7 @@ public class MainActivity2 extends AppCompatActivity
     private View mLayout;  // Snackbar 사용하기 위해서는 View가 필요합니다.
     private ImageButton btn_siren;
     private Button btn_chat;
-    private Button btn_list;
+
     Button btn_witness;
     AlertDialog.Builder builder;
     String[] witness;
@@ -116,6 +116,25 @@ public class MainActivity2 extends AppCompatActivity
                 WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         setContentView(R.layout.activity_main2);
+        final Button button1 = (Button) findViewById(R.id.button1);
+        button1.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View view){
+
+                AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity2.this);
+                dlg.setTitle("50m 반경 목격자 수"); //제목
+                dlg.setMessage("2명"); // 메시지
+                // 아이콘 설정
+//                버튼 클릭시 동작
+                dlg.setPositiveButton("확인",new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int which) {
+                        //토스트 메시지
+                        Toast.makeText(MainActivity2.this,"확인을 눌르셨습니다.",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                dlg.show();
+            }
+        });
         btn_witness=findViewById(R.id.btn_witness);
         btn_witness.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,10 +150,10 @@ public class MainActivity2 extends AppCompatActivity
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         if(menuItem.getItemId()==R.id.item1){
-                            Toast.makeText(MainActivity2.this,"메뉴1 선택", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity2.this,"dbqls209 선택", Toast.LENGTH_SHORT).show();
                         }
                         else if(menuItem.getItemId()==R.id.item2){
-                            Toast.makeText(MainActivity2.this,"메뉴2 선택", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity2.this,"32202035 선택", Toast.LENGTH_SHORT).show();
                         }
                         else if(menuItem.getItemId()==R.id.item3){
                             Toast.makeText(MainActivity2.this,"메뉴3 선택", Toast.LENGTH_SHORT).show();
@@ -638,7 +657,7 @@ public class MainActivity2 extends AppCompatActivity
         builder.setItems(witness, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int which) {
-                Toast.makeText(getApplicationContext(),"목격자는 "+witness[which],Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"목격자는 2명",Toast.LENGTH_SHORT).show();
 
             }
         });
