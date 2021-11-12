@@ -258,6 +258,7 @@ public class MainActivity2 extends AppCompatActivity
 
 
 
+    @SuppressLint("MissingPermission")
     private void startLocationUpdates() {
 
         if (!checkLocationServicesStatus()) {
