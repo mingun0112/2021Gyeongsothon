@@ -33,7 +33,7 @@ import java.util.*;
 public class MainActivity_chat extends AppCompatActivity {
     private RecyclerView recyclerView; // lv_chating
     private RecyclerView.Adapter adapter;
-
+    private String nickname = "dbqls200";
     private ArrayAdapter<String> arrayAdapter;
     private ArrayList<String> arr_room = new ArrayList<>();
     private RecyclerView.LayoutManager layoutManager;
@@ -58,7 +58,7 @@ public class MainActivity_chat extends AppCompatActivity {
         sendButton = (Button) findViewById(R.id.sendButton);
         str_room_name = getIntent().getExtras().get("room_name").toString();
         str_user_name = getIntent().getExtras().get("user_name").toString();
-        myRef = FirebaseDatabase.getInstance().getReference().child(str_room_name);
+        //myRef = FirebaseDatabase.getInstance().getReference().child(str_room_name);
         setTitle(str_room_name);
 
         sendButton.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +69,7 @@ public class MainActivity_chat extends AppCompatActivity {
                 Date today = new Date();
                 if (msg != null) {
                     Chat chat = new Chat();
-                    chat.setName(str_user_name);
+                    chat.setName(nickname);
                     chat.setMsg(msg);
 
                     //메시지를 파이어베이스에 보냄.
@@ -109,8 +109,7 @@ public class MainActivity_chat extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-
-        myRef = database.getReference("message");
+        myRef = database.getReference("msg");
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
