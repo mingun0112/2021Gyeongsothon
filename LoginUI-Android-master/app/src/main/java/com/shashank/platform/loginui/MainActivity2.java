@@ -122,7 +122,7 @@ public class MainActivity2 extends AppCompatActivity
         btn_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity_chat.class);
+                Intent intent = new Intent(MainActivity2.this, chatstart.class); // MainActivity_chat.class);
                 startActivity(intent);
             }
         });

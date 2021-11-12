@@ -73,7 +73,7 @@ public class chatstart extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),MainActivity_chat.class);
                 intent.putExtra("room_name", ((TextView) view).getText().toString());
                 intent.putExtra("user_name",str_name);
-                //startActivity;
+                startActivity(intent);
             }
         });
 
