@@ -18,10 +18,12 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -50,6 +52,7 @@ import android.net.Uri;
 public class MainActivity2 extends AppCompatActivity
         implements OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback{
+
 
 
     private GoogleMap mMap;
@@ -97,11 +100,36 @@ public class MainActivity2 extends AppCompatActivity
                 WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         setContentView(R.layout.activity_main2);
-        btn_witness=findViewById(R.id.btn_witness);
+        /*btn_witness=findViewById(R.id.btn_witness);
         btn_witness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showDialog();
+            }
+        });*/
+        findViewById(R.id.btn_witness).setOnClickListener(new View.OnClickListener(){
+            public void onClick(final View view){
+                final PopupMenu popupMenu = new PopupMenu(getApplicationContext(),view);
+                getMenuInflater().inflate(R.menu.popup_menu, popupMenu.getMenu());
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        if(menuItem.getItemId()==R.id.item1){
+                            Toast.makeText(MainActivity2.this,"메뉴1 선택", Toast.LENGTH_SHORT).show();
+                        }
+                        else if(menuItem.getItemId()==R.id.item2){
+                            Toast.makeText(MainActivity2.this,"메뉴2 선택", Toast.LENGTH_SHORT).show();
+                        }
+                        else if(menuItem.getItemId()==R.id.item3){
+                            Toast.makeText(MainActivity2.this,"메뉴3 선택", Toast.LENGTH_SHORT).show();
+                        }
+                        else if(menuItem.getItemId()==R.id.item4){
+                            Toast.makeText(MainActivity2.this,"메뉴4 선택", Toast.LENGTH_SHORT).show();
+                        }
+                        return false;
+                    }
+                });
+                popupMenu.show();
             }
         });
 
@@ -575,6 +603,13 @@ public class MainActivity2 extends AppCompatActivity
         AlertDialog alertDialog=builder.create();
         alertDialog.show();
     }
+
+    @Override
+    public int getWallpaperDesiredMinimumWidth() {
+        return super.getWallpaperDesiredMinimumWidth();
+    }
+
+
 
 
 
