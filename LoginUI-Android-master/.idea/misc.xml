@@ -3,8 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/USER/GitHub/2021Gyeongsothon/LoginUI-Android-master/app/src/main/res/layout/activity_chatstart.xml" value="0.10185185185185185" />
+        <entry key="..\:/Users/USER/GitHub/2021Gyeongsothon/LoginUI-Android-master/app/src/main/res/layout/activity_list_view_adapter.xml" value="0.10185185185185185" />
+        <entry key="..\:/Users/USER/GitHub/2021Gyeongsothon/LoginUI-Android-master/app/src/main/res/layout/activity_main.xml" value="0.1621376811594203" />
         <entry key="..\:/Users/USER/GitHub/2021Gyeongsothon/LoginUI-Android-master/app/src/main/res/layout/activity_main2.xml" value="0.12132725430597771" />
+        <entry key="..\:/Users/USER/GitHub/2021Gyeongsothon/LoginUI-Android-master/app/src/main/res/layout/activity_main_chat.xml" value="0.1621376811594203" />
+        <entry key="..\:/Users/USER/GitHub/2021Gyeongsothon/LoginUI-Android-master/app/src/main/res/layout/activity_main_witness.xml" value="0.10185185185185185" />
+        <entry key="..\:/Users/USER/GitHub/2021Gyeongsothon/LoginUI-Android-master/app/src/main/res/layout/activity_main_witness_item.xml" value="0.10185185185185185" />
         <entry key="..\:/Users/USER/GitHub/2021Gyeongsothon/LoginUI-Android-master/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/USER/GitHub/2021Gyeongsothon/LoginUI-Android-master/app/src/main/res/layout/activity_sub.xml" value="0.1621376811594203" />
         <entry key="..\:/Users/mingu/Documents/GitHub/2021Gyeongsothon/LoginUI-Android-master/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/mingu/Documents/GitHub/2021Gyeongsothon/LoginUI-Android-master/app/src/main/res/layout/activity_main2.xml" value="0.176" />
         <entry key="..\:/Users/mingu/Documents/GitHub/2021Gyeongsothon/LoginUI-Android-master/app/src/main/res/layout/activity_main3.xml" value="0.1" />
