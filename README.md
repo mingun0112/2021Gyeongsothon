@@ -47,17 +47,20 @@
 |<img src="https://img.shields.io/badge/AndroidStudio-3DDC84?style=flat-square&logo=AndroidStudio&logoColor=white"/>|<img src="https://img.shields.io/badge/Java-007396?style=flat-square&logo=Java&logoColor=white"/>|<img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=Firebase&logoColor=white"/>|
   
   
-### 4️⃣ _기능 설명 및 실행 화면_  
+### 4️⃣ _기능 설명_  
   
   
-**- 가디온즈 사용 흐름**  
-1️⃣ 사건사고 발생 시 ***사고 피해자***가 **신고하기** 버튼을 누른다.  
-2️⃣ 어플 내 DB에 저장된 사용자의 위치와 시간을 바탕으로, 동일한 시간대에 ***사고 피해자*** 주변에 있던 ***블랙박스를 소유한 사용자(목격자)*** 리스트를 확보하여 제공한다.  
-3️⃣ ***사고 피해자***는 리스트 확인 후, 블랙박스 영상 확보를 위해 ***리스트 내 사용자(목격자)*** 들에게 채팅을 보낼 수 있다. 
+- **가디온즈 사용 흐름**  
+1. 사건사고 발생 시 ***사고 피해자***가 **신고하기** 버튼을 누른다.  
+2. 어플 내 DB에 저장된 사용자의 위치와 시간을 바탕으로, 동일한 시간대에 ***사고 피해자*** 주변에 있던 ***블랙박스를 소유한 사용자(목격자)*** 리스트를 확보하여 제공한다.  
+3. ***사고 피해자***는 리스트 확인 후, 블랙박스 영상 확보를 위해 ***리스트 내 사용자(목격자)*** 들에게 채팅을 보낼 수 있다. 
   
   
   
-**- 가디온즈 실행 화면**  
+### 5️⃣ _실행 화면_  
+  
+  
+- **가디온즈 실행 화면**  
   
   
 ![image1-1.png](image1-1.png)  
