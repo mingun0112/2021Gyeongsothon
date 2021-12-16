@@ -12,7 +12,7 @@
   <tr>
     <td align="center"><a href="https://github.com/dbqls200"><img src="https://avatars.githubusercontent.com/u/87077859?v=4" width="100px;" alt=""/><br /><sub><b>YuBeen Kim</b></sub></a><br />
     <td align="center"><a href="https://github.com/kimyeonhong00"><img src="https://avatars.githubusercontent.com/u/63278864?v=4" width="100px;" alt=""/><br /><sub><b>YeonHong Kim</b></sub></a><br />
-      <td align="center"><a href="https://github.com/mingun0112"><img src="https://avatars.githubusercontent.com/u/70895373?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Mingyun Jeong</b></sub></a><br />
+      <td align="center"><a href="https://github.com/mingun0112"><img src="https://avatars.githubusercontent.com/u/70895373?s=400&v=4" width="100px;" alt=""/><br /><sub><b>MinGyun Jeong</b></sub></a><br />
 </table>  
 
 ---
